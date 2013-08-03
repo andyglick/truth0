@@ -16,14 +16,12 @@
  */
 package org.truth0;
 
-import com.google.common.annotations.GwtCompatible;
-import com.google.common.annotations.GwtIncompatible;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+
 import org.truth0.subjects.BooleanSubject;
-import org.truth0.subjects.ClassSubject;
 import org.truth0.subjects.CollectionSubject;
 import org.truth0.subjects.DefaultSubject;
 import org.truth0.subjects.IntegerSubject;
@@ -33,7 +31,8 @@ import org.truth0.subjects.MapSubject;
 import org.truth0.subjects.StringSubject;
 import org.truth0.subjects.Subject;
 
-public class TestVerb extends AbstractVerb {
+public class TestVerb extends AbstractVerb
+{
   public TestVerb(FailureStrategy failureStrategy) {
     super(failureStrategy);
   }

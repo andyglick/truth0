@@ -1,0 +1,50 @@
+import java.util.*;
+
+import javax.tools.*;
+
+import java.net.*;
+
+// print(this.variables);
+
+javap("javax.tools.JavaCompiler");
+
+javap("com.sun.tools.javac.main.JavaCompiler");
+
+// javap("java.util.ServiceLoader");
+
+// javap("javax.tools.ToolProvider");
+
+// JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
+
+// print (compiler.getClass());
+
+// class com.sun.tools.javac.api.JavacTool
+
+URL[] classpath = getClassPath();
+
+for (URL url : classpath)
+{
+  print(url);
+
+  if (url.toString().endsWith(".jar")) 
+  {
+    print(url + " is a jar"); // else print(url + " is not a jar");
+
+    String name = url.getFile().substring(1);
+
+    print(name);
+  }
+}
+
+import java.util.zip.*;
+import java.util.jar.*;
+
+// C:/java-infrastructure/jdk-1.7.0/lib/tools.jar
+
+JarFile jar = new JarFile("C:/java-infrastructure/jdk-1.7.0/lib/tools.jar");
+
+Enumeration e = jar.entries();
+
+List elist = Collections.list(e);
+
+print(elist.size());

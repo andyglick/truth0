@@ -9,20 +9,58 @@
   </parent>
   <groupId>org.truth0</groupId>
   <artifactId>truth-parent</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>0.14-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Truth (Parent)</name>
   <description>
     Parent metdata for Truth, a pure-java, strongly typed testing proposition framework.
   </description>
+
+  <prerequisites>
+    <maven>3.0.3</maven>
+  </prerequisites>
+
   <modules>
     <module>core</module>
+    <module>gwtemul</module>
   </modules>
-  <prerequisites><maven>3.0.3</maven></prerequisites>
+
   <properties>
     <gpg.skip>true</gpg.skip>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
   </properties>
+
   <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>2.4</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <version>2.9</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-source-plugin</artifactId>
+          <version>2.2.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.15</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
     <plugins>
       <plugin>
         <artifactId>maven-gpg-plugin</artifactId>
@@ -30,9 +68,26 @@
         <executions>
           <execution>
             <phase>verify</phase>
-            <goals><goal>sign</goal></goals>
+            <goals>
+              <goal>sign</goal>
+            </goals>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.8</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-help-plugin</artifactId>
+        <version>2.2</version>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>versions-maven-plugin</artifactId>
+        <version>2.1</version>
       </plugin>
     </plugins>
   </build>
@@ -89,7 +144,9 @@
         <sendOnFailure>true</sendOnFailure>
         <sendOnSuccess>false</sendOnSuccess>
         <sendOnWarning>false</sendOnWarning>
-        <configuration><address>truth-dev+build@googlecode.com</address></configuration>
+        <configuration>
+          <address>truth-dev+build@googlecode.com</address>
+        </configuration>
       </notifier>
     </notifiers>
   </ciManagement>

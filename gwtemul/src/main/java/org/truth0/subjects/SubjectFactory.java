@@ -18,6 +18,7 @@ package org.truth0.subjects;
 
 
 import org.truth0.FailureStrategy;
+import org.truth0.subjects.Subject;
 
 /**
  * A custom subject factory which will return a FooSubject (which

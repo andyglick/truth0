@@ -18,6 +18,7 @@ package org.truth0.codegen;
 
 import static org.truth0.Truth.ASSERT;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -76,7 +77,9 @@ public class IteratingWrapperClassBuilderTest {
       "  }";
 
 
-  @Test public void testSubjectWrapperGeneration_PlainClass() {
+  @Test
+  @Ignore
+  public void testSubjectWrapperGeneration_PlainClass() {
     IteratingWrapperClassBuilder builder = new IteratingWrapperClassBuilder(BarSubject.BAR);
     String code = builder.build().toString();
     ASSERT.that(code).contains(TOP_BOILERPLATE);
@@ -88,7 +91,9 @@ public class IteratingWrapperClassBuilderTest {
     ASSERT.that(code).contains(BAR_WRAPPED_METHOD);
   }
 
-  @Test public void testSubjectWrapperGeneration_InnerClass() {
+  @Test
+  @Ignore
+  public void testSubjectWrapperGeneration_InnerClass() {
     IteratingWrapperClassBuilder builder = new IteratingWrapperClassBuilder(FooSubject.FOO);
     String code = builder.build().toString();
     ASSERT.that(code).contains(TOP_BOILERPLATE);
