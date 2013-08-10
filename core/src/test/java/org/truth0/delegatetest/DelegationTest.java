@@ -27,11 +27,13 @@ import org.junit.Test;
  */
 public class DelegationTest {
 
-  @Test public void customTypeProposition() {
+  @Test 
+  public void customTypeProposition() {
     ASSERT.about(FOO).that(new Foo(5)).matches(new Foo(2 + 3));
   }
 
-  @Test public void customTypePropositionWithFailure() {
+  @Test 
+  public void customTypePropositionWithFailure() {
     try {
       ASSERT.about(FOO).that(new Foo(5)).matches(new Foo(4));
       ASSERT.fail("Should have thrown.");

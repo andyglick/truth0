@@ -39,7 +39,8 @@ public class ExpectTest {
 	private final Expect EXPECT = Expect.create();
 	private final ExpectedException thrown = ExpectedException.none();
 
-	@Rule public final MethodRule wrapper = new MethodRule() {
+	@Rule
+  public final MethodRule wrapper = new MethodRule() {
 		@Override
 		public Statement apply(Statement base, FrameworkMethod method, Object target) {
 			Statement expected = EXPECT.apply(base, method, target);
