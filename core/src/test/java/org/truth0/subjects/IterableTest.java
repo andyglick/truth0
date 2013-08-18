@@ -44,7 +44,9 @@ public class IterableTest {
     ASSERT.that(iterable(1, 2, 3)).iteratesAs(asList(1, 2, 3));
   }
 
-  @Test public void iteratesOverLegacy() {
+  @Test
+  @SuppressWarnings("deprecation")
+  public void iteratesOverLegacy() {
     ASSERT.that(iterable(1, 2, 3)).iteratesOverSequence(1, 2, 3);
   }
 

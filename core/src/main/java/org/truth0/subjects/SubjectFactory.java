@@ -35,6 +35,7 @@ public abstract class SubjectFactory<S extends Subject<S,T>, T> {
   @GwtIncompatible("reflection")
   private static final int SUBJECT_TYPE_PARAMETER = 0;
 
+  @SuppressWarnings("unchecked")
   @GwtIncompatible("reflection")
   private final Class<S> type =
       (Class<S>)ReflectionUtil.typeParameter(getClass(), SUBJECT_TYPE_PARAMETER);
